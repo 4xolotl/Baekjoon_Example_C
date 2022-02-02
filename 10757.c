@@ -7,13 +7,13 @@ int main() {
 	
 	for (i=0;;i++) {
 		scanf("%c", &p);
-		if (1 <= p && p <= 9) a[i] = p;
+		if (49 <= p && p <= 57) a[i] = p-48;
 		else if (p == ' ') break;
 	}
 	for (i=0;;i++) {
 		scanf("%c", &p);
-		if (1 <= p && p <= 9) b[i] = p;
-		else if (p == ' ') break;
+		if (49 <= p && p <= 57) b[i] = p-48;
+		else break;
 	}
 
 	if (sizeof(a) < sizeof(b)) {

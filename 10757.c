@@ -25,7 +25,7 @@ int main() {
 	if (la==lb) {
 		for (i=1; i<=lb; i++) {
 			if (a[la-i] + b[lb-i] > 9) {
-				if (b[lb-i-1] < 10 && b[lb-i-1] >= 0) b[lb-i-1] += 1;
+				if (b[lb-i-1] < 10 && b[lb-i-1] >= 0) b[lb-i-1] += 1; //반올림 함수 만들기
 				else {
 					m=1;
 					b[lb-i-1] = 1;

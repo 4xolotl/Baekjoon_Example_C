@@ -1,25 +1,23 @@
 #include <stdio.h>
 
 int main() {
-	int x, y, k, l, t, m, i, j=0, l, sum, n;
+	int t, n=0, i=0;
+	long long k, x, y, sum=0, j=1;
 
 	scanf("%d", &t);
 
-	for (i=0; i<t; i++) {
-		scanf("%d", &x);
-		scanf("%d", &y);
-		k = y-x;
-		for (n=0;;n++) {
-			for (sum=0; k<sum;j++) {
-				sum += j;
-				if (k < sum) break;
-				sum += j;
-			}
+	for (; i<t; i++) {
+		scanf("%lld", &x);
+		scanf("%lld", &y);
+		k=y-x;
+		for (;k>sum;n++) {
+			sum+=j;
+			n++;
+			if (k<=sum) break;
+			sum+=j;
+			j++;
 		}
-
-
+		printf("%d", n);
 	}
-
-
 	return 0;
 }

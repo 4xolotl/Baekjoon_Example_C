@@ -21,10 +21,9 @@ int main() {
 				}
 				if (j==2) break;
 			}
-			a--;
+			a = (a%2==0) ? a-1 : a-2;
 		}
 		printf("%d %d\n", a, b);
 	}
 	return 0;
-	
 }

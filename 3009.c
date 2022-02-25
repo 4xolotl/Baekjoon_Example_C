@@ -1,18 +1,13 @@
 #include <stdio.h>
 
 int main() {
-	int x[5], y[5], i, a=0, b=0;
+	int a, b, c, d, e, f;
 
-	for (i=3; i>0; i--) {
-		if (a==x[i])
-		scanf("%d%d", &x[i], &y[i]);
-		a=x[i];
-		b=y[i];
-	}
-	if (cnt=1) {
+	scanf("%d%d", &a, &b);
+	scanf("%d%d", &c, &d);
+	scanf("%d%d", &e, &f);
 
-	}
-
+	printf("%d %d", (a==c)?e:(c==e)?a:c, (b==d)?f:(d==f)?b:d);
 
 	return 0;
 }

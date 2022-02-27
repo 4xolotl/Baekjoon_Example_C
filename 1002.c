@@ -9,7 +9,6 @@ int main() {
 	for (i=0; i<t; i++) {
 		scanf("%d%d%lf%d%d%lf", &x1, &y1, &r1, &x2, &y2, &r2);
 
-
 	}
 
 	return 0;

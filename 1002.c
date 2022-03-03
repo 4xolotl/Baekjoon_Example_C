@@ -7,7 +7,7 @@ int main() {
 
 	scanf("%d", &t);
 
-	for (i=0; i<t; i++) {
+	for (i=0; i<t; i+ +) {
 		scanf("%d%d%d%d%d%d", &x1, &y1, &r1, &x2, &y2, &r2);
 		d = sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
 		if (x1==x2 && y1==y2 && r1==r2) printf("-1\n");

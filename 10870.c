@@ -1,15 +1,17 @@
 #include <stdio.h>
 
+int p(int a, int b, int c, int t) {
+	if (c==t) return a;
+	
+	return p(b, a+b, ++c, t);
+}
 int main() {
-	int n[25]={0, 1}, i=1, t;
+	int  t;
 
 	scanf("%d", &t);
-	
-	for (; i<t; i++) {
-		n[i+1]= n[i] + n[i-1];
-	}
-	
-	printf("%d", n[t]);
+		
+	printf("%d", p(0, 1, 0, t));
 
 	return 0;
 }
+

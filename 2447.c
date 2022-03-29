@@ -1,20 +1,19 @@
 #include <stdio.h>
 #include <math.h>
 
-void sss(int n) {
-	int i;
-
-	for (i=0; i<n; i++) {
-		printf("***");
-	}
+int row=1, column=1;
+void line() {
+	printf("%d \n", row);
+	row++;
 }
 
-void sbs(int n) {
+void sprint(double n, int k) {
 	int i;
 
-	for (i=0; i<n; i++) {
-		printf("* *");
+	for (i=0; i<pow(3,k)/3; i++) {
+		((row+1)%3==0) ? printf("* *"): printf("***");
 	}
+	line();
 }
 
 void bbb(int n) {
@@ -32,12 +31,22 @@ void star(int n) {
 }
 
 int main() {
-	int i, j, m, l=2;
-	float n, k;
+	int i, j, m, k;
+	double n, kt;
 
-	scanf("%f", &n);
-	k = log(n) / log(3.0);
+	// n+1 해서 반 나누고 k 구하면 깔끔함
+	scanf("%lf", &n);
+	kt = log(n) / log(3.0);
+	k = kt / 1;
+	n = ++n/2.0;
+
+	for (j=0; j<n; j++) {
+		sprint(n, k);
+	}
 	
+
+	/*
+
 	sss(n/3);
 	printf("\n");
 	l++;
@@ -83,6 +92,6 @@ int main() {
 	sss(n/3);
 	printf("\n");
 	l++;
-
+	*/
 	return 0;
 }

@@ -1,19 +1,22 @@
 #include <stdio.h>
 #include <math.h>
 
-int row=1, column=1;
+int row=1, column=1, r=9;
 void line() {
 	printf("%d \n", row);
 	row++;
 }
 
 void sprint(double n, int k) {
-	int i;
+	int i, l=1, j;
 
 	for (i=0; i<pow(3,k)/3; i++) {
-		((row+1)%3==0) ? printf("* *"): printf("***");
+		((row==(r+1)/2-1 || row==(r+1)/2 || row==(r+1)/2+1) && (column+1)%3==0) ? printf("   ") : ((row+1)%3==0) ? printf("* *"): printf("***");
+		column++;
 	}
+	if (row==(r+1)/2+1) r*=3;
 	line();
+	column=1;
 }
 
 void bbb(int n) {
@@ -31,67 +34,21 @@ void star(int n) {
 }
 
 int main() {
-	int i, j, m, k;
+	int i, j, m, k, l=1;
 	double n, kt;
 
-	// n+1 해서 반 나누고 k 구하면 깔끔함
+	// n+1 해서 반 나누고 k 구하면 깔끔할듯
 	scanf("%lf", &n);
 	kt = log(n) / log(3.0);
 	k = kt / 1;
 	n = ++n/2.0;
 
-	for (j=0; j<n; j++) {
+	for (j=0; 0<=j && j<n; j+=l) {
 		sprint(n, k);
+		if (j==n-1) l=-2;
 	}
 	
 
-	/*
-
-	sss(n/3);
-	printf("\n");
-	l++;
-	sbs(n/3);
-	printf("\n");
-	l++;
-	sss(n/3);
-	printf("\n");
-	l++;
 	
-	for (i=2; i<=n/3+1; i++) {
-		if (i%3==0) bbb(1);
-		else {
-			if (l%3==0)sbs(1);
-			else sss(1);
-		}
-	}
-	printf("\n");
-	l++;
-	for (i=2; i<=n/3+1; i++) {
-		if (i%3==0) bbb(1);
-		else {
-			if (l%3==0)sbs(1);
-			else sss(1);
-		}
-	}
-	printf("\n");
-	l++;
-	for (i=2; i<=n/3+1; i++) {
-		if (i%3==0) bbb(1);
-		else {
-			if (l%3==0)sbs(1);
-			else sss(1);
-		}
-	}
-	printf("\n");
-	sss(n/3);
-	printf("\n");
-	l++;
-	sbs(n/3);
-	printf("\n");
-	l++;
-	sss(n/3);
-	printf("\n");
-	l++;
-	*/
 	return 0;
 }

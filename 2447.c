@@ -8,10 +8,16 @@ void line() {
 }
 
 void sprint(double n, int k) {
-	int i, l=1, j;
+	int i, l=1, j, kk;
+
+	kk=pow(3,k)/1;
 
 	for (i=0; i<pow(3,k)/3; i++) {
-		((row==(r+1)/2-1 || row==(r+1)/2 || row==(r+1)/2+1) && (column+1)%3==0) ? printf("   ") : ((row+1)%3==0) ? printf("* *"): printf("***");
+	if ((row>=(r+1)/2-r/9 && row<=(r+1)/2+r/9) && (column+1)%3==0) {
+		for (j=0; j<r/9; j++) printf("   ");
+	}
+	else if ((row+1)%3==0) printf("* *");
+	else printf("***");
 		column++;
 	}
 	if (row==(r+1)/2+1) r*=3;
@@ -43,9 +49,9 @@ int main() {
 	k = kt / 1;
 	n = ++n/2.0;
 
-	for (j=0; 0<=j && j<n; j+=l) {
+	for (j=0; -1<=j && j<=n; j+=l) {
 		sprint(n, k);
-		if (j==n-1) l=-2;
+		if (j==n) l=-2;
 	}
 	
 

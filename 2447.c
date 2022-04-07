@@ -25,20 +25,6 @@ void sprint(double n, int k) {
 	column=1;
 }
 
-void bbb(int n) {
-	int i;
-
-	for (i=0; i<n; i++) {
-		printf("   ");
-	}
-}
-
-void star(int n) {
-	int i;
-
-
-}
-
 int main() {
 	int i, j, m, k, l=1;
 	double n, kt;
